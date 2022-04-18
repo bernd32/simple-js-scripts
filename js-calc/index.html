@@ -1,0 +1,50 @@
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>JS Calc</title>
+      <link href="./styles/styles.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<div class="main-window">
+      <h1 id="display">0</h1>
+      <button type="button" class="numbers operations special" id="clear">C</button>
+      <button type="button" class="numbers operations eval">**</button>
+      <button type="button" class="numbers operations special" id="backspace">
+            <i class="material-icons" style="font-size: large;">backspace</i></button>
+      <button type="button" class="numbers operations eval">/</button>
+      <br>
+      <button type="button" class="numbers eval">7</button>
+      <button type="button" class="numbers eval">8</button>
+      <button type="button" class="numbers eval">9</button>
+      <button type="button" class="numbers operations eval">*</button>
+      <br>
+      <button type="button" class="numbers eval">4</button>
+      <button type="button" class="numbers eval">5</button>
+      <button type="button" class="numbers eval">6</button>
+      <button type="button" class="numbers operations eval">-</button>
+      <br>
+      <button type="button" class="numbers eval">1</button>
+      <button type="button" class="numbers eval">2</button>
+      <button type="button" class="numbers eval">3</button>
+      <button type="button" class="numbers operations eval">+</button>
+      <br>
+      <button type="button" class="numbers eval">.</button>
+      <button type="button" class="numbers eval">0</button>
+      <button type="button" class="numbers eval big">00</button>
+      <br>
+      <button type="button" class="numbers eval">(</button>
+      <button type="button" class="numbers eval">)</button>
+      <button type="button" id="equals" class="equals special big">=</button>
+      <br>
+      <p class="hint"><input type="checkbox" id="enable-digital-font"> Enable digital calculator font</p>
+      <p class="hint"> <strong>Hint: </strong>you can use your keyboard</p>
+      <p class="hint">Press <kbd class="keyboard-key nowrap">← Backspace</kbd> to delete a character </p>
+      <p class="hint">Press <kbd class="keyboard-key nowrap">c</kbd> to clear display </p>
+</div>
+<script src="calc.js"></script>
+</body>
+
+</html>
