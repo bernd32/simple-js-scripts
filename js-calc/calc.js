@@ -29,15 +29,15 @@ expression.forEach(function (symbol) {
             if (isDoubleSignEntered(symbol.textContent)) {display.textContent = '0';} 
             // prevent from entering multiple zeros at the start of expression
             else if(multipleZerosAtStart(symbol.textContent)) {}
+            else if (display.textContent.length >= DISPLAY_CHAR_LENGTH) {}
             else {
-
                   display.textContent += symbol.textContent;
             }
       });
 });
 
 // keyboard processing  
-document.addEventListener('keydown', function (entered) {
+document.addEventListener('keydown', (entered) => {
       // disable invoking broswer's shortcuts
       entered.preventDefault(); 
       resetDisplay();
@@ -53,7 +53,8 @@ document.addEventListener('keydown', function (entered) {
       // displaying numbers and signs entered from keyboard
       else if (allowedKeys.includes(entered.key)) {
             display.textContent += entered.key;
-      } else if (entered.key == '=' || entered.key == 'Enter') {
+      }  
+      if (entered.key == '=' || entered.key == 'Enter') {
             calculate(entered);
       }
 });
@@ -64,22 +65,20 @@ backspaceBtn.addEventListener('click', backspace);
 
 equalsBtn.addEventListener('click', calculate);
 
-function isNumeric(value) {
-      return /^-?[0-9]+(?:\.[0-9]+)?$/.test(value);
-}
-
 function calculate(e) {
       e.preventDefault();
       // if equation is done and '=' pressed, then reset display and show 0
-      if (isNumeric(display.textContent)) {
-            display.textContent = '0';
+      if (clearDisplay || display.textContent == '') {
+            clear(e); 
       }
+      console.log(display.textContent);
       let result = eval(display.textContent);
       if (isNaN(result)) {
             display.textContent = 'Error';
       } else {
             display.textContent = result;
       }
+     
       clearDisplay = true;
 }
 
